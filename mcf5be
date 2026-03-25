@@ -112,7 +112,6 @@ p{margin-bottom:14px}
 <a href="#ref">Références</a>
 </nav>
 
-<!-- ==================== SECTION 1 ==================== -->
 <h2 id="cadre"><span class="sn">SECTION 1</span>Cadre théorique et protocole</h2>
 
 <p><strong>Roger Griffin</strong> (1991). <em>The Nature of Fascism</em>. Routledge. Définit le fascisme générique comme un « ultranationalisme palingénétique populiste ». Ces deux composantes constituent le « minimum fasciste » — conditions nécessaires et suffisantes.</p>
@@ -137,11 +136,11 @@ s+=`<tr><td class="cp">${r[i][0]}</td><td class="ce"><span class="badge ${c}">${
 mc+=`<div class="m"><div class="mh" onclick="this.parentElement.classList.toggle('open')"><span class="mp">${r[i][0]}</span><span class="badge ${c}">${l}</span><span class="mt">▾</span></div><div class="mb">${r[i][2]}</div></div>`;
 }
 s+='</tbody></table>';mc+='</div>';
-document.write(`<h3>${h}</h3><div class="def">${d}</div>${s}${mc}`);
+// Correction de la faille de rendu asynchrone
+document.currentScript.insertAdjacentHTML('beforebegin', `<h3>${h}</h3><div class="def">${d}</div>${s}${mc}`);
 }
 </script>
 
-<!-- ==================== SECTION 2: GRIFFIN ==================== -->
 <h2 id="griffin"><span class="sn">SECTION 2 — GRIFFIN</span>Minimum fasciste (2 critères)</h2>
 
 <script>
@@ -162,7 +161,6 @@ T("2.2 Ultra-nationalisme populiste",
 ["Antifas","NON","Anti-nationalistes et internationalistes par définition."]]);
 </script>
 
-<!-- ==================== SECTION 3: PAXTON ==================== -->
 <h2 id="paxton"><span class="sn">SECTION 3 — PAXTON</span>9 passions mobilisatrices</h2>
 
 <script>
@@ -239,7 +237,6 @@ T("3.9 Violence comme outil légitime",
 ["Antifas","PARTIEL","Certains groupes assument la confrontation physique (black bloc). Heurts de Liège (sept. 2025) : 12 policiers blessés. Mais violence réactive/défensive, pas valorisée comme régénération nationale."]]);
 </script>
 
-<!-- ==================== SECTION 4: ECO ==================== -->
 <h2 id="eco"><span class="sn">SECTION 4 — ECO</span>14 critères de l'Ur-fascisme</h2>
 
 <script>
@@ -356,7 +353,6 @@ T("4.14 Novlangue",
 ["Antifas","NON","Analyses, revues, conférences. Vocabulaire militant mais pas appauvri."]]);
 </script>
 
-<!-- ==================== CONCLUSION ==================== -->
 <div class="conclusion" id="conclusion">
 <h3>Synthèse</h3>
 <p>Le <strong>Vlaams Belang</strong> (86%) et la <strong>N-VA</strong> (70%) cochent les deux critères du minimum fasciste de Griffin — mythe palingénétique et ultranationalisme populiste. Le VB est le seul acteur à ne recevoir aucun NON sur l'ensemble de la grille.</p>
