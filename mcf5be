@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matrice de correspondance fasciste — Belgique</title>
+<meta name="description" content="25 critères académiques du fascisme appliqués à 5 acteurs politiques belges. Griffin, Paxton, Eco. Méthodologie complète.">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf9f6;--bg-alt:#f2f0eb;--bg-card:#fff;--text:#1a1a1a;--text-s:#5a5a5a;--text-t:#8a8a8a;--accent:#c4421a;--border:#e0ddd6;--border-l:#eceae4;--oui:#c4421a;--oui-bg:#fef3ef;--partiel:#b8860b;--partiel-bg:#fdf6e3;--non:#2d7d46;--non-bg:#eef7f0;--serif:'Libre Baskerville',Georgia,serif;--sans:'Source Sans 3',-apple-system,sans-serif;--mono:'JetBrains Mono',monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.7;font-size:17px;-webkit-font-smoothing:antialiased}
+.site-header{border-bottom:3px double var(--border);padding:20px 0 16px;text-align:center}
+.site-header .label{font-family:var(--mono);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);font-weight:500}
+article{max-width:740px;margin:0 auto;padding:0 20px}
+h1{font-family:var(--serif);font-size:clamp(26px,5vw,40px);line-height:1.2;margin:40px 0 16px;font-weight:700;letter-spacing:-.5px}
+.subtitle{font-size:19px;color:var(--text-s);line-height:1.5;margin-bottom:24px;font-weight:300}
+.meta{font-family:var(--mono);font-size:12px;color:var(--text-t);letter-spacing:.5px;padding-bottom:32px;border-bottom:1px solid var(--border);margin-bottom:40px}
+.score-hero{background:var(--bg-card);border:1px solid var(--border);border-radius:2px;padding:28px 24px;margin:36px 0}
+.score-hero h3{font-family:var(--mono);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--text-t);margin-bottom:20px}
+.score-row{display:grid;grid-template-columns:110px 1fr 48px;align-items:center;gap:10px;margin-bottom:10px}
+@media(max-width:480px){.score-row{grid-template-columns:80px 1fr 40px;gap:6px}}
+.score-row .party{font-weight:700;font-size:13px;letter-spacing:.3px}
+.score-bar{height:22px;display:flex;border-radius:2px;overflow:hidden}
+.seg-oui{background:var(--oui)}.seg-partiel{background:var(--partiel)}.seg-non{background:var(--non)}
+.score-pct{font-family:var(--mono);font-weight:500;font-size:14px;text-align:right}
+.score-detail{grid-column:2;font-size:10px;color:var(--text-t);margin-top:-6px;margin-bottom:6px;font-family:var(--mono)}
+.legend{display:flex;gap:16px;margin-top:16px;padding-top:16px;border-top:1px solid var(--border-l);font-size:12px;color:var(--text-t);flex-wrap:wrap}
+.legend-dot{display:inline-block;width:10px;height:10px;border-radius:1px;margin-right:4px;vertical-align:middle}
+h2{font-family:var(--serif);font-size:22px;margin:48px 0 8px;padding-top:28px;border-top:1px solid var(--border)}
+h2 .sn{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:1px;display:block;margin-bottom:4px}
+h3{font-family:var(--sans);font-size:18px;font-weight:700;margin:28px 0 8px}
+.def{background:var(--bg-alt);border-left:3px solid var(--accent);padding:14px 18px;margin:12px 0 20px;font-size:14.5px;font-style:italic;font-family:var(--serif);line-height:1.6;color:var(--text-s)}
+.def .src{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--text-t)}
+p{margin-bottom:14px}
+.ct{width:100%;border-collapse:collapse;margin:12px 0 28px;font-size:13.5px}
+.ct th{font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--text-t);text-align:left;padding:7px 8px;border-bottom:2px solid var(--border);font-weight:500}
+.ct td{padding:10px 8px;border-bottom:1px solid var(--border-l);vertical-align:top}
+.ct tr:last-child td{border-bottom:1px solid var(--border)}
+.cp{font-weight:600;width:70px;white-space:nowrap}
+.ce{width:62px;text-align:center}
+.cj{color:var(--text-s);font-size:13px;line-height:1.55}
+.badge{display:inline-block;padding:2px 7px;border-radius:2px;font-family:var(--mono);font-size:9.5px;font-weight:500;letter-spacing:.6px}
+.b-o{background:var(--oui-bg);color:var(--oui);border:1px solid var(--oui)}
+.b-p{background:var(--partiel-bg);color:var(--partiel);border:1px solid var(--partiel)}
+.b-n{background:var(--non-bg);color:var(--non);border:1px solid var(--non)}
+.mc{display:none}
+@media(max-width:680px){.ct{display:none}.mc{display:block}}
+.m{background:var(--bg-card);border:1px solid var(--border-l);border-radius:2px;margin-bottom:8px;overflow:hidden}
+.mh{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;cursor:pointer;gap:6px}
+.mh:hover{background:var(--bg-alt)}
+.mp{font-weight:700;font-size:13px;min-width:55px}
+.mt{font-size:16px;color:var(--text-t);transition:transform .2s;flex-shrink:0}
+.mb{display:none;padding:0 12px 12px;font-size:13px;color:var(--text-s);line-height:1.55;border-top:1px solid var(--border-l)}
+.m.open .mb{display:block;padding-top:10px}
+.m.open .mt{transform:rotate(180deg)}
+.conclusion{background:var(--bg-card);border:1px solid var(--border);border-left:4px solid var(--accent);padding:24px 22px;margin:40px 0}
+.conclusion h3{font-family:var(--serif);font-size:19px;margin:0 0 14px}
+.conclusion p{font-size:15.5px}
+.punchline{font-family:var(--serif);font-weight:700;font-style:italic;color:var(--accent);font-size:17px;margin-top:14px}
+.limits{background:var(--bg-alt);padding:22px;border-radius:2px;margin:28px 0}
+.limits h3{margin-top:0;font-size:16px}
+.limits p{font-size:14.5px;color:var(--text-s)}
+.references{border-top:1px solid var(--border);padding-top:20px;margin-top:36px;margin-bottom:60px}
+.references h3{margin-top:0;font-size:16px}
+.references p{font-size:13.5px;color:var(--text-s);padding-left:22px;text-indent:-22px;margin-bottom:6px}
+.toc{background:var(--bg-card);border:1px solid var(--border);padding:18px 22px;margin:28px 0}
+.toc h3{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--text-t);margin:0 0 10px}
+.toc a{display:block;color:var(--text);text-decoration:none;font-size:14.5px;padding:3px 0;border-bottom:1px solid var(--border-l)}
+.toc a:last-child{border:none}
+.toc a:hover{color:var(--accent)}
+.toc .ts{padding-left:14px;font-size:13.5px;color:var(--text-s)}
+.protocol{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:14px 0 20px}
+@media(max-width:580px){.protocol{grid-template-columns:1fr}}
+.protocol-item{text-align:center;padding:14px;border:1px solid var(--border);border-radius:2px}
+.protocol-item .badge{font-size:11px;padding:3px 10px}
+.protocol-item p{font-size:12.5px;color:var(--text-s);margin:6px 0 0}
+</style>
+</head>
+<body>
+
+<header class="site-header"><div class="label">Document méthodologique · Doctrine Sébastien · Mars 2026</div></header>
+
+<article>
+
+<h1>Matrice de correspondance fasciste appliquée à cinq acteurs politiques belges</h1>
+<p class="subtitle">Méthodologie d'attribution critère par critère — 25 critères académiques, 125 évaluations sourcées</p>
+<p class="meta">Sébastien Lauwers · Version 1.0 · Mars 2026 · Sources : Griffin (1991), Paxton (2004), Eco (1995)</p>
+
+<div class="score-hero">
+<h3>Synthèse des scores</h3>
+<div class="score-row"><span class="party">VLAAMS BELANG</span><div class="score-bar"><div class="seg-oui" style="width:72%"></div><div class="seg-partiel" style="width:28%"></div></div><span class="score-pct" style="color:var(--oui)">86%</span></div>
+<div class="score-row"><span></span><span class="score-detail">18 OUI · 7 PARTIEL · 0 NON</span><span></span></div>
+<div class="score-row"><span class="party">N-VA</span><div class="score-bar"><div class="seg-oui" style="width:48%"></div><div class="seg-partiel" style="width:44%"></div><div class="seg-non" style="width:8%"></div></div><span class="score-pct" style="color:var(--oui)">70%</span></div>
+<div class="score-row"><span></span><span class="score-detail">12 OUI · 11 PARTIEL · 2 NON</span><span></span></div>
+<div class="score-row"><span class="party">MR</span><div class="score-bar"><div class="seg-oui" style="width:12%"></div><div class="seg-partiel" style="width:24%"></div><div class="seg-non" style="width:64%"></div></div><span class="score-pct">24%</span></div>
+<div class="score-row"><span></span><span class="score-detail">3 OUI · 6 PARTIEL · 16 NON</span><span></span></div>
+<div class="score-row"><span class="party">PTB</span><div class="score-bar"><div class="seg-oui" style="width:4%"></div><div class="seg-partiel" style="width:24%"></div><div class="seg-non" style="width:72%"></div></div><span class="score-pct">16%</span></div>
+<div class="score-row"><span></span><span class="score-detail">1 OUI · 6 PARTIEL · 18 NON</span><span></span></div>
+<div class="score-row"><span class="party">ANTIFAS</span><div class="score-bar"><div class="seg-partiel" style="width:20%"></div><div class="seg-non" style="width:80%"></div></div><span class="score-pct">10%</span></div>
+<div class="score-row"><span></span><span class="score-detail">0 OUI · 5 PARTIEL · 20 NON</span><span></span></div>
+<div class="legend"><span><span class="legend-dot" style="background:var(--oui)"></span>OUI — critère rempli</span><span><span class="legend-dot" style="background:var(--partiel)"></span>PARTIEL</span><span><span class="legend-dot" style="background:var(--non)"></span>NON</span></div>
+</div>
+
+<nav class="toc">
+<h3>Sommaire</h3>
+<a href="#cadre">1. Cadre théorique et protocole</a>
+<a href="#griffin" class="ts">2. Griffin — Minimum fasciste (2 critères)</a>
+<a href="#paxton" class="ts">3. Paxton — 9 passions mobilisatrices</a>
+<a href="#eco" class="ts">4. Eco — 14 critères de l'Ur-fascisme</a>
+<a href="#conclusion">5. Synthèse et limites</a>
+<a href="#ref">Références</a>
+</nav>
+
+<!-- ==================== SECTION 1 ==================== -->
+<h2 id="cadre"><span class="sn">SECTION 1</span>Cadre théorique et protocole</h2>
+
+<p><strong>Roger Griffin</strong> (1991). <em>The Nature of Fascism</em>. Routledge. Définit le fascisme générique comme un « ultranationalisme palingénétique populiste ». Ces deux composantes constituent le « minimum fasciste » — conditions nécessaires et suffisantes.</p>
+<p><strong>Robert O. Paxton</strong> (2004). <em>The Anatomy of Fascism</em>. Knopf. Neuf « passions mobilisatrices » et processus en cinq étapes. Paxton a appliqué sa grille à Trump en 2021 (<em>Newsweek</em>) et conclu que le seuil était franchi.</p>
+<p><strong>Umberto Eco</strong> (1995). « Ur-Fascism ». <em>NYRB</em>. Quatorze caractéristiques du fascisme éternel. « Il suffit que l'une soit présente pour que la nébuleuse fasciste se condense. »</p>
+
+<div class="protocol">
+<div class="protocol-item"><span class="badge b-o">OUI</span><p>Critère clairement rempli, documentable.</p></div>
+<div class="protocol-item"><span class="badge b-p">PARTIEL</span><p>Présence ambiguë ou incomplète.</p></div>
+<div class="protocol-item"><span class="badge b-n">NON</span><p>Critère non rempli.</p></div>
+</div>
+<p><strong>Formule :</strong> Score = (OUI + PARTIEL × 0.5) / 25.</p>
+
+<script>
+function T(h,d,r){
+let s='<table class="ct"><thead><tr><th>Acteur</th><th>Éval.</th><th>Justification</th></tr></thead><tbody>';
+let mc='<div class="mc">';
+for(let i=0;i<r.length;i++){
+let c=r[i][1]==='OUI'?'b-o':r[i][1]==='PARTIEL'?'b-p':'b-n';
+let l=r[i][1]==='PARTIEL'?'PART.':r[i][1];
+s+=`<tr><td class="cp">${r[i][0]}</td><td class="ce"><span class="badge ${c}">${l}</span></td><td class="cj">${r[i][2]}</td></tr>`;
+mc+=`<div class="m"><div class="mh" onclick="this.parentElement.classList.toggle('open')"><span class="mp">${r[i][0]}</span><span class="badge ${c}">${l}</span><span class="mt">▾</span></div><div class="mb">${r[i][2]}</div></div>`;
+}
+s+='</tbody></table>';mc+='</div>';
+document.write(`<h3>${h}</h3><div class="def">${d}</div>${s}${mc}`);
+}
+</script>
+
+<!-- ==================== SECTION 2: GRIFFIN ==================== -->
+<h2 id="griffin"><span class="sn">SECTION 2 — GRIFFIN</span>Minimum fasciste (2 critères)</h2>
+
+<script>
+T("2.1 Mythe palingénétique",
+"Le noyau mythique du fascisme est une forme palingénétique — un mythe de renaissance nationale après une période de décadence. <span class='src'>— Griffin, 1991, p. 38</span>",
+[["VB","OUI","Récit explicite de renaissance flamande. « Eigen Volk Eerst », rhétorique de « reconquête » face à la « submersion migratoire ». Programme 2024 : « restaurer la fierté flamande ». L'indépendance = renaissance après des décennies de « soumission ». <em>Mudde, The Far Right Today (2019).</em>"],
+["N-VA","OUI","Le confédéralisme est structurellement un mythe de renaissance flamande. De Wever : « la Belgique est un État en voie d'extinction ». Racines dans le mouvement flamand historique (Volksunie). Le 11 juillet sacralisé. <em>Maddens, De N-VA Uitgelegd aan Mijn Dochter (2014).</em>"],
+["MR","NON","Aucun mythe de renaissance nationale. Discours libéral-économique (compétitivité, fiscalité), pas identitaire-national."],
+["PTB","NON","Transformation sociale proposée mais pas de mythe de renaissance nationale. Cadre internationaliste et de classe."],
+["Antifas","NON","Aucun mythe de renaissance nationale. Cadre défensif et internationaliste."]]);
+
+T("2.2 Ultra-nationalisme populiste",
+"Un nationalisme illibéral qui rejette le pluralisme et les droits universels, fondé sur le « pouvoir du peuple » conçu comme communauté homogène. <span class='src'>— Griffin, 1991, pp. 36-38</span>",
+[["VB","OUI","« Préférence flamande » explicite : restriction logements sociaux, emplois publics, allocations pour non-Flamands. Suppression droit du sol, « remigration ». Condamné pour racisme (Cour de cassation, 2004). <em>Jagers &amp; Walgrave, Party Politics (2007).</em>"],
+["N-VA","OUI","Nationalisme redéfinissant la citoyenneté sur base linguistique. Politique Francken (refoulements Soudan, refus Pacte Marrakech 2018). Discours « transferts nord-sud » : Flamand travailleur vs Wallon « assisté ». <em>Deschouwer, The Politics of Belgium (2012).</em>"],
+["MR","NON","Parti libéral défendant les droits individuels et le cadre belge unitaire. Pas de restriction de droits sur base ethnique."],
+["PTB","NON","Internationaliste. « Peuple » défini par la classe. Défend l'extension des droits (régularisation, droit de vote des étrangers)."],
+["Antifas","NON","Anti-nationalistes et internationalistes par définition."]]);
+</script>
+
+<!-- ==================== SECTION 3: PAXTON ==================== -->
+<h2 id="paxton"><span class="sn">SECTION 3 — PAXTON</span>9 passions mobilisatrices</h2>
+
+<script>
+T("3.1 Sentiment de crise catastrophique",
+"La communauté vit une crise existentielle qui dépasse les remèdes ordinaires. <span class='src'>— Paxton, 2004, ch. 2</span>",
+[["VB","OUI","Rhétorique permanente : « submersion migratoire », « islamisation », « effondrement des valeurs ». Van Grieken parle de « dernière chance » pour la Flandre."],
+["N-VA","OUI","Double crise : Belgique « non viable » + crise migratoire/sécuritaire. De Wever : crise migratoire = « menace pour la cohésion sociale ». Urgence de « sauver la Flandre »."],
+["MR","PARTIEL","Dramatise la crise économique (« décrochage wallon ») et sécuritaire, mais dans un registre libéral classique, pas existentiel-identitaire."],
+["PTB","PARTIEL","Diagnostique une crise sociale profonde (inégalités, précarité, climat). Diagnostic structurel et documenté, pas apocalyptique-identitaire."],
+["Antifas","PARTIEL","Diagnostiquent une montée du fascisme. Analyse réactive, pas récit de crise civilisationnelle."]]);
+
+T("3.2 Primauté du groupe",
+"Les droits du groupe national l'emportent sur les droits individuels. L'individu n'existe que comme partie du collectif.",
+[["VB","OUI","La « préférence flamande » subordonne explicitement les droits individuels à l'appartenance au groupe national flamand."],
+["N-VA","OUI","La scission de la sécurité sociale — objectif historique — signifie que les droits sociaux dépendent de l'appartenance communautaire. Francken subordonne le droit d'asile à la « capacité d'accueil » unilatérale."],
+["MR","NON","Droits individuels dans un cadre libéral classique. Les restrictions proposées sont fondées sur la « responsabilité individuelle », pas l'appartenance communautaire."],
+["PTB","NON","Droits collectifs universalistes (grève, négociation collective). Droits étendus, pas restreints sur base d'appartenance."],
+["Antifas","NON","Droits individuels et collectifs dans un cadre universaliste et anti-discriminatoire."]]);
+
+T("3.3 Victimisation du groupe",
+"Le groupe est victime d'un déclin causé par des ennemis intérieurs/extérieurs — libéralisme, immigration, élites cosmopolites.",
+[["VB","OUI","Le peuple flamand = victime de l'immigration, de l'islam, de l'État belge francophone, de l'UE, des « élites mondialistes ». Victimisation ethno-identitaire systématique."],
+["N-VA","OUI","Flandre systématiquement victime des « transferts nord-sud » (7-8 Mrd€/an selon la N-VA), du « parasitisme wallon », de l'État « inefficace ». Victimisation économique à base identitaire."],
+["MR","NON","Pas de récit victimaire identitaire. Discours de « réalisme économique »."],
+["PTB","PARTIEL","Travailleurs victimes du capitalisme et de l'austérité. Victimisation de classe documentée, pas ethno-identitaire. Le PARTIEL reflète la structure victimaire, pas le contenu identitaire."],
+["Antifas","NON","Pas de récit victimaire communautaire. Discours défensif, pas plaintif."]]);
+
+T("3.4 Peur du déclin",
+"Peur de la dégénérescence sous l'effet de l'individualisme, du cosmopolitisme, de l'immigration ou du métissage.",
+[["VB","OUI","Obsession du « grand remplacement » (Renaud Camus cité par des cadres VB), « islamisation de la Flandre », recul démographique des « Flamands de souche ». Dewinter, <em>Inch'Allah?</em> (2017)."],
+["N-VA","OUI","Peur du déclin économique (Flandre « freinée » par la Belgique) et identitaire (« l'intégration a échoué » — Francken). Jambon : « défendre le canon flamand » face au « multiculturalisme »."],
+["MR","NON","Pas de peur du déclin identitaire ou démographique. Discours sur la compétitivité économique, pas la dégénérescence culturelle."],
+["PTB","NON","Pas de peur du déclin national. Diagnostic structurel (inégalités croissantes), pas identitaire."],
+["Antifas","NON","Inquiétude sur la montée du fascisme, pas sur le déclin d'une communauté nationale."]]);
+
+T("3.5 Intégration communautaire pure",
+"Exigence d'une communauté plus soudée, plus pure, purgée des éléments étrangers ou dissidents.",
+[["VB","OUI","Mesures de purification communautaire : interdiction du voile, restriction du halal, expulsion des « éléments non intégrables », « remigration » (terme utilisé en 2024). Flandre = communauté homogène à restaurer."],
+["N-VA","PARTIEL","Prône l'« assimilation » (Francken). « Canon flamand » de Jambon = outil d'homogénéisation. Mais pas de « remigration » et acceptation formelle du pluralisme interne."],
+["MR","NON","Neutralité de l'État (signes convictionnels dans services publics) dans un cadre laïque-libéral, pas de purification communautaire."],
+["PTB","NON","Défend le multiculturalisme et l'inclusion. Position inverse."],
+["Antifas","NON","Défendent la diversité et l'anti-discrimination. Position inverse."]]);
+
+T("3.6 Autorité de chefs naturels",
+"Soumission au chef charismatique dont l'instinct est supérieur à la raison et au débat démocratique.",
+[["VB","OUI","Parti à structure verticale centrée sur Dewinter puis Van Grieken. Faible démocratie interne documentée."],
+["N-VA","OUI","De Wever exerce une autorité personnelle exceptionnelle. Sa transition président→Premier ministre tout en gardant l'influence sur l'appareil illustre un leadership charismatique. Le parti s'identifie à son leader."],
+["MR","OUI","Bouchez a concentré le pouvoir interne. Cadres historiques (Reynders, Wilmès) marginalisés. Le parti s'est « bouchézisé ». NB : trait commun à de nombreux partis belges, pas indicateur de fascisme seul."],
+["PTB","PARTIEL","Structure centraliste marxiste-léniniste. Hedebouw = figure médiatique dominante. Mais structure collective revendiquée (bureau politique) et Hedebouw n'exerce pas un pouvoir comparable à De Wever/Bouchez."],
+["Antifas","NON","Décentralisés, horizontaux, sans leader. « Par sa nature informelle et dépourvue de dirigeant, impossible à qualifier d'organisation » (RTBF, sept. 2025)."]]);
+
+T("3.7 Supériorité de l'instinct du chef",
+"Les instincts du chef sont plus fiables que la raison, le débat ou les institutions.",
+[["VB","OUI","Van Grieken = voix « authentique » du peuple flamand face aux « élites déconnectées ». Le programme est secondaire par rapport à l'incarnation personnelle."],
+["N-VA","PARTIEL","De Wever = intellectuel (historien, auteur). Mais ses déclarations Ukraine/Russie (mars 2026) — « philosophie » hors ligne gouvernementale puis rétractation — illustrent un pouvoir personnaliste. Tension entre argumentation et personnalisme."],
+["MR","PARTIEL","Bouchez = « dit tout haut ce que les gens pensent tout bas ». Communication par instinct et provocation calculée. Mais argumente aussi (même de manière polarisante)."],
+["PTB","NON","Analyses économiques détaillées, contre-budgets chiffrés. Cadre rationnel-analytique."],
+["Antifas","NON","Pas de chef dont l'instinct guiderait le mouvement."]]);
+
+T("3.8 Droit du peuple élu de dominer",
+"Le peuple élu a le droit naturel de dominer sans contrainte légale ou morale.",
+[["VB","PARTIEL","Remet en cause le droit d'asile et les conventions internationales. Mais nationalisme séparatiste, pas impérialiste — pas de visée de domination extérieure."],
+["N-VA","PARTIEL","Refus Pacte Marrakech (2018), résistance aux normes européennes. Mais pas de projet de domination extérieure."],
+["MR","NON","Défend le cadre international et européen (malgré tensions ponctuelles)."],
+["PTB","NON","Défend le droit international, le multilatéralisme, la CPI."],
+["Antifas","NON","Défendent les droits universels et l'anti-discrimination."]]);
+
+T("3.9 Violence comme outil légitime",
+"La beauté de la violence et de la volonté au service du succès du groupe. Violence valorisée comme purification.",
+[["VB","PARTIEL","Pas de revendication officielle. Mais histoire (Vlaams Blok, liens Blood &amp; Honour, Voorpost) et tolérance envers la violence de sa base (ratonnades documentées, agression ultras brugeois Molenbeek mai 2025). Ne condamne pas systématiquement."],
+["N-VA","NON","Parcours institutionnel et parlementaire. Ni théorisation ni pratique de la violence."],
+["MR","NON","Ni théorisation ni pratique de la violence."],
+["PTB","NON","Parti parlementaire, cadre légaliste."],
+["Antifas","PARTIEL","Certains groupes assument la confrontation physique (black bloc). Heurts de Liège (sept. 2025) : 12 policiers blessés. Mais violence réactive/défensive, pas valorisée comme régénération nationale."]]);
+</script>
+
+<!-- ==================== SECTION 4: ECO ==================== -->
+<h2 id="eco"><span class="sn">SECTION 4 — ECO</span>14 critères de l'Ur-fascisme</h2>
+
+<script>
+T("4.1 Culte de la tradition",
+"Syncrétisme traditionaliste — la vérité a été annoncée une fois pour toutes. <span class='src'>— Eco, 1995, §1</span>",
+[["VB","OUI","Invocation permanente des « racines flamandes », patrimoine chrétien, « traditions séculaires » menacées par la modernité et l'immigration."],
+["N-VA","OUI","« Canon flamand » de Jambon, défense des « valeurs flamandes », politique patrimoniale identitaire. Le 11 juillet sacralisé."],
+["MR","NON","Parti moderniste et libéral."],
+["PTB","NON","Parti progressiste et matérialiste."],
+["Antifas","NON","Progressistes et anti-traditionalistes."]]);
+
+T("4.2 Rejet du modernisme",
+"Rejet des Lumières et du rationalisme. Pas un rejet de la technologie mais de la raison comme guide politique. <span class='src'>— Eco, 1995, §2</span>",
+[["VB","PARTIEL","Rejette le « progressisme » et le « multiculturalisme » comme dérives des Lumières, mais utilise la technologie. Rejet culturel, pas technique."],
+["N-VA","PARTIEL","Rejet du « wokisme » et du « politiquement correct ». Utilisation pragmatique de la modernité économique."],
+["MR","NON","Se réclame explicitement des Lumières et du rationalisme libéral."],
+["PTB","NON","Se réclame du matérialisme scientifique."],
+["Antifas","NON","Se réclament généralement des Lumières et de l'universalisme."]]);
+
+T("4.3 Culte de l'action pour l'action",
+"L'action est belle en soi. Penser = émasculation. Anti-intellectualisme. <span class='src'>— Eco, 1995, §3</span>",
+[["VB","PARTIEL","Rhétorique du « bon sens populaire » contre les « intellectuels déconnectés ». Mais produit aussi des notes de politique."],
+["N-VA","NON","De Wever = intellectuel revendiqué. La N-VA valorise la compétence technocratique."],
+["MR","NON","Bouchez argumente (même de manière polarisante). Le MR valorise l'expertise économique."],
+["PTB","NON","Surproduit de l'analyse (contre-budgets, études). Inverse de l'anti-intellectualisme."],
+["Antifas","PARTIEL","L'action directe est valorisée comme engagement. Mais production d'analyse aussi (revues, conférences, travaux historiques)."]]);
+
+T("4.4 Le désaccord est trahison",
+"La pensée critique est une forme de trahison. Pas de place pour la nuance. <span class='src'>— Eco, 1995, §4</span>",
+[["VB","OUI","Dissidents systématiquement exclus. Ligne du parti non négociable. Médias critiques = « le système »."],
+["N-VA","PARTIEL","Certain débat interne toléré (aile Francken vs De Wever) mais discipline stricte. Les « traîtres » (Bracke) sont marginalisés."],
+["MR","OUI","Bouchez a systématiquement marginalisé les voix discordantes. Posture schmittienne ami/ennemi appliquée aussi en interne. « Bouchézisation » documentée (La Libre, Le Soir, RTBF)."],
+["PTB","PARTIEL","Centralisme démocratique = discipline forte. Dissidences publiques rares. Mais le cadre théorique marxiste légitime le débat interne comme dialectique."],
+["Antifas","PARTIEL","Rigidité doctrinale dans certains groupes. Mais la décentralisation empêche une discipline uniforme."]]);
+
+T("4.5 Peur de la différence",
+"Racisme implicite ou explicite. L'Autre est une menace. <span class='src'>— Eco, 1995, §5</span>",
+[["VB","OUI","Islamophobie structurelle (Dewinter, <em>Inch'Allah?</em>). Opposition au multiculturalisme. Condamné pour racisme (2004)."],
+["N-VA","OUI","Politique Francken (refoulements Soudan), « échec de l'intégration », opposition au voile. L'Autre (migrant, musulman, francophone) = menace pour la cohésion flamande."],
+["MR","PARTIEL","Campagnes contre le voile, l'écriture inclusive, le « wokisme ». Cadre libéral-laïque (« neutralité ») plutôt qu'ethno-identitaire. Instrumentalisation sans racisme structurel."],
+["PTB","NON","Défend la diversité, la régularisation, le dialogue interculturel."],
+["Antifas","NON","Anti-racistes et pro-diversité par définition."]]);
+
+T("4.6 Appel à la classe moyenne frustrée",
+"Le fascisme puise sa base dans une classe moyenne appauvrie ou menacée de déclassement. <span class='src'>— Eco, 1995, §6</span>",
+[["VB","OUI","Capte massivement la classe moyenne et ouvrière flamande frustrée par l'immigration, la fiscalité et le déclassement."],
+["N-VA","OUI","Parti de la classe moyenne flamande freinée par l'État belge et menacée par le déclassement fiscal. Discours « transferts » = frustration du contribuable."],
+["MR","OUI","Classe moyenne supérieure francophone (axe Lasne-Waterloo-Uccle) frustrée par la fiscalité et la régulation. « Tea Party fiscal » du Brabant wallon."],
+["PTB","OUI","Capte la frustration de la classe moyenne inférieure et des travailleurs précaires. Trait commun à presque tout mouvement politique — le OUI reflète la réalité, pas une spécificité fasciste."],
+["Antifas","NON","Pas structurés comme mouvement de classe moyenne frustrée. Base diversifiée (étudiants, syndicalistes, associatifs)."]]);
+
+T("4.7 Obsession du complot",
+"Le peuple est victime d'un complot. L'ennemi est intérieur et étranger. <span class='src'>— Eco, 1995, §7</span>",
+[["VB","OUI","« Grand remplacement » = théorie du complot démographique. « Complot des élites mondialistes » contre la Flandre. Le « système » = conspiration."],
+["N-VA","PARTIEL","Dénonce le « système belge » et les « transferts cachés » — registre plus technocratique que complotiste. Mais accents complotistes dans le discours sur la « particratie » et les « élites francophones »."],
+["MR","NON","Dénonce des adversaires politiques, pas des conspirateurs."],
+["PTB","PARTIEL","Dénonce l'« oligarchie » et les « multinationales qui contrôlent la politique ». Fondé sur des mécanismes documentés (lobbying, revolving doors) mais la structure rhétorique (élite cachée) a des similitudes formelles avec le complotisme."],
+["Antifas","PARTIEL","Dénoncent les « réseaux d'ED infiltrés » dans la police/armée. Partiellement documenté (affaire Conings, rapport OCAM) mais peut glisser vers le complotisme."]]);
+
+T("4.8 L'ennemi est fort ET faible",
+"L'ennemi est trop fort (il domine) et trop faible (il est méprisable). Contradiction logique caractéristique. <span class='src'>— Eco, 1995, §8</span>",
+[["VB","OUI","L'immigré = « envahisseur conquérant » (fort) ET « profiteur du CPAS » (faible). L'État belge = « oppresseur de la Flandre » (fort) ET « en faillite » (faible)."],
+["N-VA","OUI","La Wallonie = « dominante politiquement » (clé de veto) ET « assistée économiquement ». L'État = « trop puissant » (régulateur) ET « inefficace »."],
+["MR","NON","Critique des adversaires de manière cohérente (trop de régulation, trop de dépenses). Pas de double jeu fort/faible."],
+["PTB","NON","Décrit les oligarques comme puissants — factuellement exact. Pas de double jeu."],
+["Antifas","NON","Décrivent l'ED comme une menace croissante. Pas de double jeu."]]);
+
+T("4.9 La vie comme guerre permanente",
+"Pas de lutte pour la vie mais vie pour la lutte. Le pacifisme = collusion avec l'ennemi. <span class='src'>— Eco, 1995, §9</span>",
+[["VB","OUI","Rhétorique guerrière permanente : « reconquête », « résistance », « combat pour la Flandre ». Chaque élection = « bataille » existentielle."],
+["N-VA","PARTIEL","Vocabulaire conflictuel (« bataille pour la Flandre ») alternant avec un registre technocratique. Oscillation."],
+["MR","NON","Vocabulaire de compétition économique, pas de guerre."],
+["PTB","NON","« Lutte des classes » dans un cadre analytique marxiste, pas sacralisation de la guerre comme mode d'être."],
+["Antifas","NON","Mode défensif (« résistance »). « Sans fascisme, il n'y a plus d'antifas » (Cédric Simon, RTBF). Pas de sacralisation de la guerre permanente."]]);
+
+T("4.10 Mépris des faibles",
+"Élitisme populaire. Les faibles méritent leur sort. <span class='src'>— Eco, 1995, §10</span>",
+[["VB","PARTIEL","Méprise les « profiteurs » (immigrés, chômeurs) mais se présente comme défenseur des « petites gens flamandes ». Protection des faibles « nationaux », mépris des faibles « étrangers »."],
+["N-VA","PARTIEL","Discours de « responsabilisation » glissant vers le mépris des bénéficiaires d'allocations. Francken : « shopping de l'asile »."],
+["MR","PARTIEL","Discours sur l'« assistanat » et la « culture de la dépendance ». Mépris implicite des bénéficiaires de l'aide sociale. Cadre libéral (responsabilité individuelle), pas biologique."],
+["PTB","NON","Se définit par la défense des faibles, des précaires. Position inverse."],
+["Antifas","NON","Défendent les minorités et les opprimés. Position inverse."]]);
+
+T("4.11 Culte de l'héroïsme et de la mort",
+"Chacun est éduqué pour devenir un héros. Le héros est impatient de mourir. <span class='src'>— Eco, 1995, §11</span>",
+[["VB","PARTIEL","Glorification des « héros flamands » (Éperons d'or, IJzerbedevaart). Culte des « martyrs » du mouvement flamand (collaborateurs WW2 présentés comme « idéalistes »). Mais pas de culte contemporain de la mort sacrificielle."],
+["N-VA","PARTIEL","IJzerbedevaart, commémoration du mouvement flamand. De Wever a tenté de « normaliser » la collaboration = réhabilitation partielle des « martyrs »."],
+["MR","NON","Jean Gol commémoré dans un cadre libéral, pas sacrificiel."],
+["PTB","NON","Pas de sacralisation de la mort héroïque. Cadre matérialiste."],
+["Antifas","NON","Commémorent Clément Méric comme victime d'injustice, pas comme héros sacrificiel. « Un martyr qui n'a pas donné sa vie mais à qui on l'a volée » (collectif Méric)."]]);
+
+T("4.12 Machisme",
+"Transfert de la volonté de puissance sur les questions sexuelles. Mépris des femmes et des homosexuels. <span class='src'>— Eco, 1995, §12</span>",
+[["VB","PARTIEL","Opposition historique au mariage homosexuel. Instrumentalisation du féminisme uniquement contre l'islam (« nos femmes » menacées). Base machiste documentée. Mais « modernisation » de l'image (Barbara Pas)."],
+["N-VA","PARTIEL","Instrumentalisation du féminisme anti-islam. Demir critique le « féminisme woke ». Kanko : « le voile = soumission ». Femmes mises en avant mais dans un cadre d'instrumentalisation identitaire."],
+["MR","NON","Égalité des genres dans un cadre libéral. Sophie Wilmès = Première ministre."],
+["PTB","NON","Défend explicitement le féminisme et les droits LGBTQ+. Position inverse."],
+["Antifas","NON","Pro-féministes et pro-LGBTQ+. Position inverse."]]);
+
+T("4.13 Populisme qualitatif sélectif",
+"Le « peuple » est une fiction monolithique. Le leader prétend incarner la volonté du peuple. <span class='src'>— Eco, 1995, §13</span>",
+[["VB","OUI","Le « vrai peuple flamand » est ethniquement et culturellement défini. Migrants, francophones, « mondialistes » n'en font pas partie."],
+["N-VA","OUI","Le « peuple flamand » est défini linguistiquement et culturellement. Le confédéralisme institutionnalise cette définition sélective."],
+["MR","PARTIEL","Bouchez parle au nom du « bon sens » et des « gens qui travaillent ». Populisme de classe moyenne excluant les « assistés » et les « wokes ». Définition socio-économique, pas ethnique."],
+["PTB","PARTIEL","« Peuple » défini par la classe (travailleurs vs oligarchie). Populisme de gauche (Laclau/Mouffe). Structure formellement similaire mais contenu radicalement différent (classe vs ethnie)."],
+["Antifas","NON","Ne prétendent pas incarner « le peuple ». Se définissent par une position (anti-fascisme), pas une représentation populaire."]]);
+
+T("4.14 Novlangue",
+"Vocabulaire pauvre et syntaxe élémentaire destinés à limiter les instruments de la pensée critique. <span class='src'>— Eco, 1995, §14</span>",
+[["VB","OUI","Slogans simplificateurs systématiques : « Eigen Volk Eerst », « Stop Islamisering », « Baas in eigen land ». Vocabulaire émotionnel remplaçant l'analyse : « profiteurs », « criminels étrangers », « dictature européenne »."],
+["N-VA","PARTIEL","Oscille entre jargon technocratique (« confédéralisme », « autonomie fiscale ») et simplification populiste (« transferts », « profiteurs du Sud »). Dualité."],
+["MR","PARTIEL","Bouchez a importé un lexique simplifié : « wokisme », « assistanat », « ecolo-gauchiste ». Rhétorique polarisante réduisant la complexité. Mais documents argumentés aussi (Centre Jean Gol)."],
+["PTB","NON","Vocabulaire complexe (« plus-value », « contradictions du capitalisme »). Cadre analytique dense, parfois inaccessible. Inverse de la novlangue."],
+["Antifas","NON","Analyses, revues, conférences. Vocabulaire militant mais pas appauvri."]]);
+</script>
+
+<!-- ==================== CONCLUSION ==================== -->
+<div class="conclusion" id="conclusion">
+<h3>Synthèse</h3>
+<p>Le <strong>Vlaams Belang</strong> (86%) et la <strong>N-VA</strong> (70%) cochent les deux critères du minimum fasciste de Griffin — mythe palingénétique et ultranationalisme populiste. Le VB est le seul acteur à ne recevoir aucun NON sur l'ensemble de la grille.</p>
+<p>Le <strong>MR</strong> (24%) n'est pas fasciste au sens de Griffin — il ne coche aucun des deux critères du noyau dur. Mais il emprunte au répertoire fascisant décrit par Paxton : autorité du chef, désaccord comme trahison, mépris des faibles, novlangue, peur instrumentalisée de la différence. Cela correspond à ce que Paxton appelle la <em>phase d'alliance des conservateurs avec les radicaux</em> — le moment où la droite classique adopte les codes de l'extrême droite pour la neutraliser électoralement, tout en la légitimant structurellement.</p>
+<p>Le <strong>PTB</strong> (16%) et les <strong>antifas</strong> (10%) ne cochent aucun critère du noyau dur de Griffin. Leurs scores reflètent des traits de populisme (PTB) et d'activisme conflictuel (antifas) qui sont des pathologies politiques distinctes du fascisme.</p>
+<p class="punchline">« La symétrie des extrêmes n'existe pas — même en Belgique. »</p>
+</div>
+
+<div class="limits">
+<h3>Limites méthodologiques</h3>
+<p>L'attribution comporte une part d'interprétation inhérente aux sciences politiques. La grille est conçue pour être falsifiable : chaque attribution est justifiée. Si un critère est mal attribué, la contestation doit porter sur les faits invoqués, pas sur la méthode en général.</p>
+<p>La mesure quantitative est un outil de visualisation, pas une mesure scientifique absolue. La preuve réside dans l'accumulation qualitative des justifications critère par critère.</p>
+</div>
+
+<div class="references" id="ref">
+<h3>Références</h3>
+<p>Deschouwer, K. (2012). <em>The Politics of Belgium: Governing a Divided Society</em>. Palgrave Macmillan.</p>
+<p>Eco, U. (1995). « Ur-Fascism ». <em>The New York Review of Books</em>, 22 juin 1995.</p>
+<p>Griffin, R. (1991). <em>The Nature of Fascism</em>. Routledge.</p>
+<p>Jagers, J. & Walgrave, S. (2007). « Populism as political communication style ». <em>European Journal of Political Research</em>, 46(3).</p>
+<p>Maddens, B. (2014). <em>De N-VA Uitgelegd aan Mijn Dochter</em>. Houtekiet.</p>
+<p>Mudde, C. (2019). <em>The Far Right Today</em>. Polity Press.</p>
+<p>Paxton, R.O. (2004). <em>The Anatomy of Fascism</em>. Alfred A. Knopf.</p>
+<p>Paxton, R.O. (2021). « I've Hesitated to Call Donald Trump a Fascist. Until Now. » <em>Newsweek</em>, 11 jan. 2021.</p>
+</div>
+
+</article>
+</body>
+</html>
